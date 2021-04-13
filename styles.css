@@ -272,7 +272,7 @@ justify-content: center;
   /* align-items: center; */
 }
 
-#aboutme.show {
+.show {
   height: auto;
   opacity: 1;
   transition: 700ms ease-in-out;
