@@ -17,7 +17,7 @@ var innertext = document.getElementById("buttontoggle");
 
 var aboutme = document.getElementById("aboutme");
 document.getElementById("aboutmebutton").onclick = function() {
-  aboutme.classList.toggle('show');
+  aboutme.classList.toggle('.show');
 };
 
 
