@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.4;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  /* height: 100%; */
+}
+
+.overlay {
+  background-blend-mode: overlay;
+  background-color: pink;
+  opacity: 80%;
+}
+
+#buttontoggle {
+  background-color: Transparent;
+  border-color: Transparent;
+  bottom: 175px;
+  color: pink;
+  cursor: pointer;
+  font-family: 'Ubuntu';
+  font-size: 2.5em;
+  font-weight: bold;
+  position: absolute;
+  outline: none;
+  right: 25px;
+  z-index: 3;
+}
+
+video {
+  height: 80%;
+  object-fit: cover;
+  opacity: 0.4;
+  padding-top: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+/* .video {
+  display: block;
+} */
+
+.main {
+  color: #fff;
+  height: 100vh;
+}
+
+header {
+/* position: relative; */
+/* display: flex; */
+/* justify-content: space-between; */
+padding: 25px;
+/* color: white; */
+/* background-color: Transparent; */
+}
+
+header img {
+  /* width: 28px; */
+  /* background-color: Transparent; */
+}
+
+.hi {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.introduction {
+  font-size: 1.5em;
+  /* grid-gap: 1em; */
+  padding-left: 25px;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.introduction a:hover {
+  letter-spacing: 12px;
+  /* background-color: Transparent; */
+}
+
+.description {
+  /* text-transform: lowercase; */
+}
+
+p, h2 {
+  padding-bottom: 10px;
+}
+
+p {
+  font-size: 1.0rem;
+  text-transform: none;
+}
+
+.menu-wrap {
+  position: absolute;
+  /* top: 0; */
+  /* left: 0 auto; */
+  /* z-index: 1; */
+}
+
+.menu-wrap .toggler {
+  /* top: 0;
+  left: 0; */
+  cursor: pointer;
+  height: 50px;
+  opacity: 0;
+  position: absolute;
+  width: 150px;
+  z-index: 2;
+}
+
+.menu-wrap .hamburger {
+  /* top: 0; */
+  left: 25px;
+  padding: 1rem;
+  position: absolute;
+  z-index: 1;
+  /* width: 35px;
+  height: 20px; */
+  /* background: transparent; */
+  /* opacity: 100%; */
+  /* display: flex; */
+  /* align-items: left;
+  justify-content: left; */
+}
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  /* width: 100%;
+  height: 2px; */
+  /* background-color: #fff; */
+  /* display: flex; */
+  /* align-items: left; */
+  /* justify-content: center; */
+  /* transition: all 0.4s ease; */
+}
+
+.menu-wrap .hamburger > div:before {
+/* .menu-wrap .hamburger > div:after { */
+  /* background: inherit; */
+  content: 'More';
+  /* height: 2px; */
+  /* justify-content: left; */
+  left: -40px;
+  position: absolute;
+  top: -10px;
+  /* width: 100%; */
+  /* z-index: 1; */
+}
+
+.menu-wrap .hamburger > div:after {
+  /* top: 10px; */
+}
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  /* transform: rotate(170deg); */
+left:56px;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+/* left: -75px; */
+  /* top: 0; */
+  /* transform: rotate(225deg); */
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:before{
+  /* position: absolute; */
+  /* display: grid; */
+  content: 'back';
+  cursor: pointer;
+  /* margin-left: 35px; */
+}
+
+
+.menu-wrap .toggler:hover + .hamburger > div {
+  /* transform: rotate(225deg); */
+  letter-spacing: 12px;
+}
+
+.menu-wrap .menu {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+}
+
+.menu-wrap .menu > div {
+align-items: center;
+  background: lightblue;
+  border-radius: 50%;
+  display: flex;
+  flex: none;
+  height: 200vw;
+justify-content: center;
+opacity: 95%;
+transform: scale(0);
+transition: all 0.4s ease;
+  width: 200vw;
+}
+
+.menu-wrap .menu > div > div {
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  /* color: #fff; */
+  /* font-size: 1.5rem; */
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  /* transition: opacity 0.4s ease; */
+}
+
+#aboutmebutton {
+  /* background-color: Transparent;
+  border-color: Transparent; */
+  cursor: pointer;
+  /* color: white; */
+  /* font-family: 'Ubuntu', sans-serif; */
+  font-size: 1.5em;
+  /* margin-left: 150px; */
+  /* line-height: 1.4; */
+  /* position: relative; */
+}
+
+#aboutme {
+  /* display: flex; */
+border: 2px solid white;
+height: 0;
+justify-content: center;
+  opacity: 0;
+  transition-property: opacity, height, width;
+  width: 0;
+  /* align-items: center; */
+}
+
+#aboutme.show {
+  height: auto;
+  opacity: 1;
+  transition: 700ms ease-in-out;
+  width: 700px;
+}
+
+.blackjack:hover {
+background-color: green;
+border: 2px solid red;
+border-radius: 10px;
+margin: auto;
+opacity: 0.8;
+width: 260px;
+}
+
+footer {
+  /* display: inline-grid; */
+  /* grid-template-columns: 1fr; */
+  margin-left: 25px;
+}
+
+footer img {
+  bottom: 0px;
+  padding-top: 75px;
+  padding-right: 45px;
+  width: 90px;
+}
+
+footer img:hover {
+  transform: scale(1.2) translateY(-10px);
+}
+
+
+:root {
+  --menu-speed: 0.75s;
+}
+
+@media screen and (max-width: 1250px) {
+#aboutmebutton {
+  margin-left: 0px;
+
+}
+.menu-wrap .toggler:checked + .hamburger > div:before{
+  /* top: -280px; */
+  left: -125px;
+  transform: rotate(90deg);
+  transition: 500ms ease-in;
+  letter-spacing: 5px;
+}
+#aboutme.show {
+  width: 400px;
+}
+#buttontoggle {
+  bottom: 40px;
+  font-size: 2em;
+}
+/* .menu-wrap .toggler:checked + .hamburger > div {
+  top: 10px;
+} */
+}
