@@ -266,7 +266,7 @@ footer .grid {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-@media(max-width: 450px) {
+@media(max-width: 320px) {
 body {
   font-size: 1.8em;
 }
